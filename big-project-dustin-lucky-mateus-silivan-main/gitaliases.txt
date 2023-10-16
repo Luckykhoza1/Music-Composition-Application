@@ -1,0 +1,3 @@
+git co- checkout
+git nb - new branch
+git upstream - push --set-upstream origin 

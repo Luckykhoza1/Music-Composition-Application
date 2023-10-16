@@ -1,0 +1,39 @@
+#pianoButton
+{
+    -fx-text-fill: gray;
+}
+
+#harpischordButton
+{
+    -fx-text-fill:greenyellow;
+} 
+
+#marimbaButton
+{
+    -fx-text-fill:blue;
+} 
+
+#organButton
+{
+    -fx-text-fill:darkkhaki;
+} 
+
+#accordionButton
+{
+    -fx-text-fill:hotpink;
+} 
+
+#guitarButton
+{
+    -fx-text-fill:lightskyblue;
+} 
+
+#violinButton
+{
+    -fx-text-fill:black;
+} 
+
+#frenchHornButton
+{
+    -fx-text-fill:saddlebrown;
+} 

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whitman.cs370proj.composer.MainController">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" accelerator="Shortcut+B" mnemonicParsing="false" onAction="#handleAbout" text="About..." />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="newMenuItem" accelerator="Shortcut+N" mnemonicParsing="false" onAction="#handleNew" text="New" />
+              <MenuItem fx:id="openMenuItem" accelerator="Shortcut+O" mnemonicParsing="false" onAction="#handleOpen" text="Open..." />
+              <MenuItem fx:id="saveMenuItem" accelerator="Shortcut+S" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+              <MenuItem fx:id="saveAsMenuItem" accelerator="Shortcut+Shift+S" mnemonicParsing="false" onAction="#handleSaveAs" text="Save as..." />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="exitMenuItem" accelerator="Shortcut+Q" mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </items>
+          </Menu>
+            <Menu fx:id="editMenu" mnemonicParsing="false" text="Edit">
+              <items>
+                  <MenuItem fx:id="undoMenuItem" accelerator="Shortcut+Z" mnemonicParsing="false" onAction="#handleUndo" text="Undo" />
+                  <MenuItem fx:id="redoMenuItem" accelerator="Shortcut+Y" mnemonicParsing="false" onAction="#handleRedo" text="Redo" />
+                  <MenuItem fx:id="cutMenuItem" accelerator="Shortcut+X" mnemonicParsing="false" onAction="#handleCut" text="Cut" />
+                  <MenuItem fx:id="copyMenuItem" accelerator="Shortcut+C" mnemonicParsing="false" onAction="#handleCopy" text="Copy" />
+                  <MenuItem fx:id="pasteMenuItem" accelerator="Shortcut+V" mnemonicParsing="false" onAction="#handlePaste" text="Paste" />
+                <MenuItem fx:id="selectAllMenuItem" accelerator="Shortcut+A" mnemonicParsing="false" onAction="#handleSelectAll" text="Select All" />
+                  <MenuItem fx:id="deleteMenuItem" accelerator="Shortcut+Backspace" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+              </items>
+            </Menu>
+          <Menu fx:id="actionMenu" mnemonicParsing="false" text="Action">
+            <items>
+              <MenuItem fx:id="playMenuItem" accelerator="Shortcut+P" mnemonicParsing="false" onAction="#handlePlay" text="Play" />
+                  <MenuItem fx:id="stopMenuItem" accelerator="Shortcut+S" mnemonicParsing="false" onAction="#handleStop" text="Stop" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <ScrollPane fx:id="scrollPane" prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <content>
+
+          <AnchorPane fx:id="music_pane" minHeight="0.0" minWidth="0.0" prefHeight="1280.0" prefWidth="2000.0" />
+          <AnchorPane fx:id="musicPane" minHeight="0.0" minWidth="0.0" prefHeight="1280.0" prefWidth="2000.0" />
+
+        </content>
+      </ScrollPane>
+   </center>
+   <left>
+      <Pane fx:id="buttonPane" prefHeight="373.0" prefWidth="180.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="pianoButton" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" selected="true" stylesheets="@Main.css" text="Piano">
+               <toggleGroup>
+                  <ToggleGroup fx:id="instruments" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="harpischordButton" layoutX="8.0" layoutY="44.0" mnemonicParsing="false" stylesheets="@Main.css" text="Harpischord" toggleGroup="$instruments" />
+            <RadioButton fx:id="marimbaButton" layoutX="8.0" layoutY="74.0" mnemonicParsing="false" stylesheets="@Main.css" text="Marimba" toggleGroup="$instruments" />
+            <RadioButton fx:id="organButton" layoutX="8.0" layoutY="104.0" mnemonicParsing="false" stylesheets="@Main.css" text="Organ" toggleGroup="$instruments" />
+            <RadioButton fx:id="accordionButton" layoutX="8.0" layoutY="134.0" mnemonicParsing="false" stylesheets="@Main.css" text="Accordion" toggleGroup="$instruments" />
+            <RadioButton fx:id="guitarButton" layoutX="8.0" layoutY="164.0" mnemonicParsing="false" stylesheets="@Main.css" text="Guitar" toggleGroup="$instruments" />
+            <RadioButton fx:id="violinButton" layoutX="8.0" layoutY="194.0" mnemonicParsing="false" stylesheets="@Main.css" text="Violin" toggleGroup="$instruments" />
+            <RadioButton fx:id="frenchHornButton" layoutX="8.0" layoutY="224.0" mnemonicParsing="false" stylesheets="@Main.css" text="French Horn" toggleGroup="$instruments" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
